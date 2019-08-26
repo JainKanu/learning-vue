@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="app">
+        <a v-bind:href="blogUrl">Visit My Blog</a>
+        <button v-bind:title="fullName + ' ' + lastName">Karan</button>
+    </div>
+    
+        <!-- In This File I have Done Binding Arguments and expresions Where "v-bind" is a directive.name  "href" is directiveargument and data in href is directiveexpresion which is sync with data by vue.js -->
+
+    <script src="../lib/vue.js"></script>
+    <script type="text/javascript">
+        new Vue({
+            el: '#app',
+            data: {
+               blogUrl: 'https://jainkanu.github.io/Learning-HTML/Chapter-6/Resume.html',
+               fullName: 'Jain',
+               lastName: 'karan'
+            }
+        });
+    </script>
+</body>
+</html>

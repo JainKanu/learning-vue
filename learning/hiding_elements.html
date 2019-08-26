@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        [v-cloak]{
+            display: none;
+        }
+    </style>
+    <!-- v-else-if statement and hiding elements -->
+
+    <div id="app">
+        <p v-cloak v-if="inStock > 10"> {{ inStock }} In Stock</p>
+        <p v-cloak  v-else-if="inStock > 0"> {{ inStock }} Hurry up there are few items left</p>
+        <p v-cloak  v-else> {{ inStock }} Out of Stock</p>
+
+    </div>
+
+    <script src="../lib/vue.js"></script>
+    <script type="text/javascript">
+    setTimeout(function (){
+        new Vue({
+            el: '#app',
+            data:{
+                inStock: 11
+            }
+        });
+    }, 5000);
+
+    </script>
+</body>
+
+</html>

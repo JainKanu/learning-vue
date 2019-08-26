@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        
+        <!-- In This File I have Done String Interpolation And send data as object -->
+
+    <div id="app">
+        <h1> {{ age > 60 ? 'old' : 'Young' }} </h1>
+        <!-- <h1> {{ name.split(' ')[1] }} </h1> -->
+        <h1> {{ getFullName(firstName, lastName).name }} </h1>
+    </div>
+    
+    <script src="../lib/vue.js"></script>
+    <script type="text/javascript">
+        new Vue({
+            el: '#app',
+            data: {
+               age: '22',
+            //    name: 'Karan Jain',
+               firstName: 'Karan',
+               lastName: 'Jain'
+            },
+            methods: {
+                getFullName: (first, last) =>   {
+                    return {
+                      name: first + ' ' + last  
+                    };
+                }
+            }
+        });
+    </script>
+</body>
+</html>

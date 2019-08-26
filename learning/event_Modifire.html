@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- Events And Modifires -->
+
+    <div id="app">
+       
+        <input type="text" v-on:keyup.enter="keyUp">
+        Output: {{ name }}
+
+        <br><br>
+
+        <input type="text" v-on:keyup.ctrl.enter="key = $event.target.value">
+        Output: {{ key }}
+
+    </div>
+
+    <script src="../lib/vue.js"></script>
+    <script type="text/javascript">
+        new Vue({
+            el: '#app',
+            data:{
+                name: '',
+                key: ''
+            },
+            methods:{
+                keyUp: function(event){
+                    this.name = event.target.value;
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

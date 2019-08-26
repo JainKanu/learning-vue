@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- In this file I have Created String Interpolation , methods and directives -->
+
+    <div id="app">
+        
+        <p>Name: {{ name }} </p>
+        <p>Birth Year:  {{ date }} </p>
+        
+        
+        <p>I Am [Young/Old] {{ myAge(date) ? 'Old' : 'Young' }} </p>
+      
+        
+        <a v-bind:title="firstName + ' ' + lastName">Hover your mouse here!</a>
+      </div>
+
+    <script src="../lib/vue.js"></script>
+    <script type="text/javascript">
+        new Vue({
+            el: '#app',
+            data: {
+
+                name: 'Karan',
+                date: '1997',
+                firstName: 'Karan',
+                lastName: 'Jain'
+
+               
+            },
+            methods:{
+                myAge: function(date){
+                    return date > 1996 ;
+                }
+            }
+        });
+    </script>
+</body>
+</html>

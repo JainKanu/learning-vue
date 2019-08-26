@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- Two Way Data Binding -->
+
+    <div id="app">
+       
+        <input type="text" v-model.number.lazy="age">
+        <br/>
+        <br/>
+        <p>You Entered: {{ age }}</p>
+        <br/>
+        <br/>
+        <p>Type: {{ typeof age }}</p>
+
+
+    </div>
+
+    <script src="../lib/vue.js"></script>
+    <script type="text/javascript">
+        new Vue({
+            el: '#app',
+            data:{
+                name: '',
+                age: 27
+            }
+        });
+    </script>
+</body>
+
+</html>
